@@ -49,6 +49,10 @@ export default defineConfig({
                         text: "Volatility2内存取证",
                         link: "/2024-4-30/Volatility2内存取证.md",
                     },
+                    {
+                        text: "HTTP请求头常见绕过",
+                        link: "/2024-4-30/HTTP请求头绕过.md",
+                    },
                 ],
             },
         ],
