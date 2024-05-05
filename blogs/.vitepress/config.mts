@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-
+import { get_sidebar } from "./auto";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     head: [
@@ -22,59 +22,15 @@ export default defineConfig({
         },
     },
     themeConfig: {
-        search: {
-            provider: "local",
-        },
-        outline: [2, 3],
-        // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: "主页", link: "/" },
             { text: "博客", link: "/home" },
         ],
-
-        sidebar: [
-            {
-                items: [
-                    {
-                        text: "博客主页",
-                        link: "/home.md",
-                    },
-                ],
-            },
-            {
-                text: "2024-4-30",
-                collapsed: true,
-                items: [
-                    {
-                        text: "Volatility2内存取证",
-                        link: "/2024-4-30/Volatility2内存取证.md",
-                    },
-                    {
-                        text: "HTTP请求头常见绕过",
-                        link: "/2024-4-30/HTTP请求头绕过.md",
-                    },
-                ],
-            },
-            {
-                text: "PWN",
-                collapsed: true,
-                items: [
-                    {
-                        text: "基础栈溢出ret2text已有函数",
-                        link: "/PWN/基础栈溢出ret2text已有函数.md",
-                    },
-                    {
-                        text: "基础栈溢出ret2text组合函数",
-                        link: "/PWN/基础栈溢出ret2text组合函数.md",
-                    },
-                    {
-                        text: "保护机制及其绕过",
-                        link: "PWN/保护机制及其绕过.md",
-                    },
-                ],
-            },
-        ],
-
+        search: {
+            provider: "local",
+        },
+        outline: [2, 3],
+        sidebar: get_sidebar(),
         socialLinks: [{ icon: "github", link: "https://github.com/freetbash" }],
     },
 });
