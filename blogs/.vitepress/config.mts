@@ -55,6 +55,16 @@ export default defineConfig({
                     },
                 ],
             },
+            {
+                text: "PWN",
+                collapsed: true,
+                items: [
+                    {
+                        text: "基础栈溢出ret2text",
+                        link: "/PWN/基础栈溢出ret2text.md",
+                    },
+                ],
+            },
         ],
 
         socialLinks: [{ icon: "github", link: "https://github.com/freetbash" }],
