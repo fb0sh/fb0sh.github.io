@@ -60,8 +60,16 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                     {
-                        text: "基础栈溢出ret2text",
-                        link: "/PWN/基础栈溢出ret2text.md",
+                        text: "基础栈溢出ret2text已有函数",
+                        link: "/PWN/基础栈溢出ret2text已有函数.md",
+                    },
+                    {
+                        text: "基础栈溢出ret2text组合函数",
+                        link: "/PWN/基础栈溢出ret2text组合函数.md",
+                    },
+                    {
+                        text: "保护机制及其绕过",
+                        link: "PWN/保护机制及其绕过.md",
                     },
                 ],
             },

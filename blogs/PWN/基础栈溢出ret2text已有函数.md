@@ -1,8 +1,10 @@
 ---
-title: 基础栈溢出ret2text
+title: 基础栈溢出ret2text 已有提权函数
 layout: doc
 ---
 [[toc]]
+
+> 32位寄存器4个字节，函数传参只使用栈
 
 ## 基础检查
 > 本例题是PolarD&N的基础入门pwn题 小狗汪汪汪
