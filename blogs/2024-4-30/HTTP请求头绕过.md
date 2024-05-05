@@ -7,14 +7,14 @@ layout: doc
 ## 使用Curl
 > 可以直观的看到响应和请求
 
-```bash
+```zsh
 curl -v https://123123.123.123.1
 curl -v -X POST -d "name=123" https://123123.123.123.1
 curl -v -x POST -H "Referer: https://123123.123.123.1" https://123123.123.123.1
 ```
 
 ## 绕过IP类
-```bash
+```zsh
 X-Forwarded-For
 X-remote-IP
 X-remote-addr
@@ -25,6 +25,6 @@ x-originating-iP
 
 ## 伪造Refer
 
-```bash
+```zsh
 Referer: https://123123.123.123.1
 ```

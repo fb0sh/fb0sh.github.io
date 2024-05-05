@@ -10,7 +10,7 @@ layout: doc
 > 本例题是PolarD&N的基础入门pwn题 小狗汪汪汪
 
 使用file和checksec 查看elf的位数和安全保护
-```bash
+```zsh
 ┌──(kali㉿kali)-[~/win/Downloads]
 └─$ file woof
 woof: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=b3b9279f6e821fe77197c0b174bfee82dd39de52, not stripped
@@ -52,7 +52,7 @@ woof: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically link
 > 使用pwntools库 可以方便的编写exp
 ```py
 pwn import *
-
+context(os="linux", arch='i386')
 io = process("./woof")
 # io = remote("120.46.59.242", 2111)
 
