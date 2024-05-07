@@ -1,7 +1,18 @@
 import { defineConfig } from "vitepress";
 import { get_sidebar } from "./auto";
+import { RssPlugin, RSSOptions } from "vitepress-plugin-rss";
+const baseUrl = "https://blog.freet.tech";
+const RSS: RSSOptions = {
+    title: "Freet Bash's traces",
+    baseUrl,
+    copyright: "Copyright (c) 2024-present, Freet Bash",
+};
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    vite: {
+        plugins: [RssPlugin(RSS)],
+    },
     head: [
         [
             "link",
@@ -11,8 +22,8 @@ export default defineConfig({
             },
         ],
     ],
-    title: "博客随笔",
-    description: "记录每天的学习",
+    title: "trace",
+    description: "path, core, trace",
     lastUpdated: true,
     cleanUrls: true,
     markdown: {
@@ -23,8 +34,8 @@ export default defineConfig({
     },
     themeConfig: {
         nav: [
-            { text: "主页", link: "/" },
-            { text: "博客", link: "/home" },
+            { text: "Home", link: "/" },
+            { text: "traces", link: "/home" },
         ],
         search: {
             provider: "local",

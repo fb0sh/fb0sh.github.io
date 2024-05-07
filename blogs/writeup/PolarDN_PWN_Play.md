@@ -2,6 +2,8 @@
 title: PolarD&N PWN play
 layout: doc
 ---
+# {{$frontmatter.title}}
+[[toc]]
 
 ## 检查文件
 ```zsh

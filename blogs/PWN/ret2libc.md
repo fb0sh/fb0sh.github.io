@@ -2,6 +2,7 @@
 title: ret2libc
 layout: doc
 ---
+# {{$frontmatter.title}}
 [[toc]]
 
 ## libc 相关知识

@@ -2,6 +2,7 @@
 title: 基础栈溢出ret2text 组合函数
 layout: doc
 ---
+# {{$frontmatter.title}}
 [[toc]]
 
 > 64位寄存器8个字节，传参是寄存器+栈，rdi,rsi,rdx,rcx,r8,r9按顺序依次

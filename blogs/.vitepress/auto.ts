@@ -13,7 +13,7 @@ export const get_sidebar = () => {
         {
             items: [
                 {
-                    text: "博客主页",
+                    text: "traces",
                     link: "/home.md",
                 },
             ],

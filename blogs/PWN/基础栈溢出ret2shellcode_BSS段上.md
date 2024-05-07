@@ -2,6 +2,7 @@
 title: 基础栈溢出ret2shellcode 写入BSS段
 layout: doc
 ---
+# {{$frontmatter.title}}
 [[toc]]
 
 ## pwntools生成shellcode

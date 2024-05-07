@@ -2,6 +2,7 @@
 title: HTTP常见绕过请求头
 layout: doc
 ---
+# {{$frontmatter.title}}
 [[toc]]
 
 ## 使用Curl

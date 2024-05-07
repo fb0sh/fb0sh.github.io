@@ -3,9 +3,16 @@
 layout: home
 
 hero:
-  name: "博客随笔"
-  text: "记录每天的学习"
-  tagline: 坚持每天的学习
-
+  name: "note"
+  text: "path, core, trace"
+  tagline: error
+  actions:
+    - theme: brand
+      text: PWN
+      link: /PWN/基础知识
+      
+    - theme: brand
+      text: WriteUp
+      link: /writeup/PolarDN_PWN_Play
 ---
 

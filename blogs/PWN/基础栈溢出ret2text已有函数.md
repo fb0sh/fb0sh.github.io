@@ -2,6 +2,7 @@
 title: 基础栈溢出ret2text 已有提权函数
 layout: doc
 ---
+# {{$frontmatter.title}}
 [[toc]]
 
 > 32位寄存器4个字节，函数传参只使用栈
