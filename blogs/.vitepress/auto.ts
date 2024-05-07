@@ -24,6 +24,8 @@ export const get_sidebar = () => {
         let item = {
             text: category,
             collapsed: true,
+            collapsible: true,
+
             items: [] as any,
         };
 
