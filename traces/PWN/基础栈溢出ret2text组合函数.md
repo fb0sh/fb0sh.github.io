@@ -28,20 +28,20 @@ x64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, in
 64位小端序，没有保护
 
 ## IDA反编译源码
-![alt text](image-5.png)
+![alt text](/images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](/images/image-6.png)
 
 没有可供直接利用的getshell函数，因此需要自己构造
 溢出函数是read 且缓冲区大小是0x80h
 摁下shift+F12查看字符串
 
-![alt text](image-7.png)
+![alt text](/images/image-7.png)
 > 0000000000601060
 
 存在/bin/sh 字符串及其地址，寻找system函数地址
 
-![alt text](image-8.png)
+![alt text](/images/image-8.png)
 > 0000000000400560
 
 

@@ -27,14 +27,14 @@ pwn2: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, i
 ```
 
 ## ida 
-![alt text](image-11.png)
+![alt text](/images/image-11.png)
 
 很显然v4的长度只有2，而v6很多，
 
 v4写入shellcode的地址
 
 v6写入shellcode
-![alt text](image-12.png)
+![alt text](/images/image-12.png)
 
 ## exp
 ```py

@@ -29,21 +29,21 @@ woof: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically link
 
 
 ## IDA反编译源码
-![alt text](image.png)
+![alt text](/images/image.png)
 
 可以看到main函数的流程，值得注意的是 dog函数
 
 
-![alt text](image-1.png)
+![alt text](/images/image-1.png)
 很明显可以看到gets这里存在栈溢出，s是一个长度为9的字符数组
 
-![alt text](image-2.png)
+![alt text](/images/image-2.png)
 
 要覆盖的地址在 栈上的 s + ebp 的位置 也就是 9 + 4
 
 然后找一下有没有可以执行系统命令的函数
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](/images/image-3.png)
+![alt text](/images/image-4.png)
 
 存在getshell函数
 

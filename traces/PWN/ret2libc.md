@@ -66,15 +66,15 @@ Game: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically link
 ### ida
 > main
 
-![alt text](image-13.png)
+![alt text](/images/image-13.png)
 
 > function
 
-![alt text](image-15.png)
+![alt text](/images/image-15.png)
 
 > star
 
-![alt text](image-16.png)
+![alt text](/images/image-16.png)
 
 最终发现是在star函数里出现了溢出
 NX开启
@@ -149,7 +149,7 @@ sleep: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, 
 ```
 
 ### ida
-![alt text](image-17.png)
+![alt text](/images/image-17.png)
 
 ### exp
 > pop rdi; ret

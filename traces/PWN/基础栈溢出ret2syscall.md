@@ -29,7 +29,7 @@ layout: doc
 ## 原理图 
 > 很重要
 
-![alt text](image-18.png)
+![alt text](/images/image-18.png)
 
 ## 例题
 > PolarCTFD&N 03ret2syscall_32
@@ -56,7 +56,7 @@ layout: doc
 
 ### ida
 
-![alt text](image-19.png)
+![alt text](/images/image-19.png)
 
 没有system 但存在 /bin/sh
 

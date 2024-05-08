@@ -24,7 +24,7 @@ play: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, i
 ```
 
 ## ida
-![alt text](image.png)
+![alt text](/images/image-21.png)
 
 很显然是 bss shellcode
 

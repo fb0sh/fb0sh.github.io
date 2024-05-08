@@ -38,9 +38,9 @@ Easy_ShellCode: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynami
 ```
 
 ## IDA反编译源码
-![alt text](image-9.png)
+![alt text](/images/image-9.png)
 
-![alt text](image-10.png)
+![alt text](/images/image-10.png)
 
 发现str是在bss段 可以写入shellcode
 read函数 buf 存在缓冲区溢出
