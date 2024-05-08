@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 import { get_sidebar } from "./auto";
 import { RssPlugin, RSSOptions } from "vitepress-plugin-rss";
-const baseUrl = "https://blog.freet.tech";
+const baseUrl = "https://trace.freet.tech";
 const RSS: RSSOptions = {
     title: "Freet Bash's traces",
     baseUrl,

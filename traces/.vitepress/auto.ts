@@ -1,5 +1,5 @@
 import fs from "fs";
-const base = "./blogs";
+const base = "./traces";
 export const get_sidebar = () => {
     let categories: string[] = [];
     fs.readdirSync(base).forEach((dir) => {

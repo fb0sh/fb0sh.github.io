@@ -4,9 +4,9 @@
     "vitepress": "^1.1.4"
   },
   "scripts": {
-    "docs:dev": "vitepress dev blogs",
-    "docs:build": "vitepress build blogs",
-    "docs:preview": "vitepress preview blogs"
+    "docs:dev": "vitepress dev traces",
+    "docs:build": "vitepress build traces",
+    "docs:preview": "vitepress preview traces"
   },
   "dependencies": {
     "vitepress-plugin-rss": "^0.2.4"
