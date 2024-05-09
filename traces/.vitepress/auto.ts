@@ -4,7 +4,7 @@ export const get_sidebar = () => {
     let categories: string[] = [];
     fs.readdirSync(base).forEach((dir) => {
         let s = fs.lstatSync(base + "/" + dir);
-        if (s.isDirectory() && dir != ".vitepress") {
+        if (s.isDirectory() && dir != ".vitepress" && dir != "images") {
             categories.push(dir);
         }
     });
