@@ -42,6 +42,6 @@ export default defineConfig({
         },
         outline: [2, 3],
         sidebar: get_sidebar(),
-        socialLinks: [{ icon: "github", link: "https://github.com/freetbash" }],
+        socialLinks: [{ icon: "github", link: "https://github.com/fb0sh" }],
     },
 });
