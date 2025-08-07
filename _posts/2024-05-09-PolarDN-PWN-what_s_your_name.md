@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "PolarDN_what's your name"
-categories: [blogs, pwn, CTF]
+categories: [CTF, pwn]
 tags: [blog, PolarDN, WP]
 ---
 

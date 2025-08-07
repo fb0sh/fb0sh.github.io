@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "PWN 基础栈溢出ret2shellcode 写入BSS段"
-categories: [blogs, pwn]
+categories: [CTF, pwn]
 tags: [blog,ret]
 ---
 

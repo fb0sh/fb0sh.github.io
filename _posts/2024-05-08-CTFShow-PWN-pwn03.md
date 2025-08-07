@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "CTFShow pwn03"
-categories: [blogs, pwn, CTF]
+categories: [CTF, pwn]
 tags: [blog, CTFShow, WP]
 ---
 

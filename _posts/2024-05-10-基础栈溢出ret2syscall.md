@@ -2,8 +2,8 @@
 published: true
 layout: post
 title: "PWN 基础栈溢出ret2syscall"
-categories: [blogs, pwn]
-tags: [blog,ret]
+categories: [CTF, pwn]
+tags: [blog, ret]
 ---
 ## 系统调用
 

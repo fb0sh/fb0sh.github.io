@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "内存取证的学习与Volatility2的使用"
-categories: [blogs, 取证]
+categories: [CTF, 取证]
 tags: [blog, vol]
 ---
 
