@@ -6,9 +6,6 @@ categories: [blogs, 取证]
 tags: [blog, vol]
 ---
 
-# {{$frontmatter.title}}
-[[toc]]
-
 # 内存取证
 > 理论很重要，但实操更重要
 
@@ -17,9 +14,8 @@ tags: [blog, vol]
 > 推荐在 kali下安装
 
 ### 安装pip2
-::: tip
 需要安装python2的pip
-:::
+
 ```zsh
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 
@@ -57,9 +53,9 @@ git clone https://github.com/volatilityfoundation/community.git
 
 python2 vol.py --plugins=./plugins/mimikatz -f imagefile.raw mimikatz
 ```
-::: warning
+
 --plugins 必须在 -f 参数之前
-:::
+
 
 
 ### 常见命令
