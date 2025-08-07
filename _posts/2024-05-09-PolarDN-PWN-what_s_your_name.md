@@ -1,9 +1,10 @@
 ---
-title: what's your name
-layout: doc
+published: true
+layout: post
+title: "PolarDN_what's your name"
+categories: [blogs, pwn, CTF]
+tags: [blog, PolarDN, WP]
 ---
-# {{$frontmatter.title}}
-[[toc]]
 
 > 题目来源: PolarCTF pwn what's your name
 

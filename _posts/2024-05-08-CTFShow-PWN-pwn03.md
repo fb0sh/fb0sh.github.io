@@ -1,10 +1,12 @@
 ---
-title: CTFShow pwn03
-layout: doc
+published: true
+layout: post
+title: "CTFShow pwn03"
+categories: [blogs, pwn, CTF]
+tags: [blog, CTFShow, WP]
 ---
 
-# {{$frontmatter.title}}
-[[toc]]
+
 
 > 题目链接：https://ctf.show/challenges#pwn03-64
 

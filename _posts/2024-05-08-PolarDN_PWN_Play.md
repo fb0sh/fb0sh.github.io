@@ -1,9 +1,10 @@
 ---
-title: PolarD&N PWN play
-layout: doc
+published: true
+layout: post
+title: "PolarDN_Play"
+categories: [blogs, pwn, CTF]
+tags: [blog, PolarDN, WP]
 ---
-# {{$frontmatter.title}}
-[[toc]]
 
 ## 检查文件
 ```zsh
