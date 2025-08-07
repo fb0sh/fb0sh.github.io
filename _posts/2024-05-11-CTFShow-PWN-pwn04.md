@@ -27,11 +27,11 @@ ex2: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linke
 可以看到 是 32位小端序，开启了栈保护，和栈不可执行（无法写入shellcode）
 
 ## ida
-![alt text](/images/image-25.png)
+![alt text](/assets/images/image-25.png)
 
 存在getshell函数
 
-![alt text](/images/image-26.png)
+![alt text](/assets/images/image-26.png)
 存在printf格式化漏洞，
 
 可以泄露canary地址，重写canary和getshell地址

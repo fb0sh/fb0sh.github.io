@@ -28,7 +28,7 @@ pwn2: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically link
 ```
 
 ## ida
-![alt title](/images/image-24.png)
+![alt title](/assets/images/image-24.png)
 
 ```asm
 .bss:0804A06C b               db    ? ;               ; DATA XREF: main+62↑o

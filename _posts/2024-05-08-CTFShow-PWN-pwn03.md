@@ -29,9 +29,9 @@ stack1: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically li
 ## ida
 
 栈不可执行，栈溢出保护未开启
-![alt text](/images/image-22.png)
+![alt text](/assets/images/image-22.png)
 
-![alt text](/images/image-23.png)
+![alt text](/assets/images/image-23.png)
 
 没有可写的bss 只能ret2libc了
 
