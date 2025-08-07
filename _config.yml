@@ -9,7 +9,7 @@ theme: jekyll-theme-chirpy
 lang: zh-CN
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -19,7 +19,7 @@ title: Trace # the main title
 tagline: path, core, trace # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  fb0sh's blog site.
+  fb0sh's blog site. include CyberSecurity, CTF, Web, Pwn, Misc
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
