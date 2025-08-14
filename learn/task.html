@@ -1,0 +1,264 @@
+---
+published: true
+layout: post
+title: "验证码识别-枚举用户名"
+categories: [WEB]
+tags: [blog,ocr]
+---
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络冒险家任务总览</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #f0e6d2; /* 羊皮纸背景色 */
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".2" ><rect x="50" width="50" height="50" /><rect y="50" width="50" height="50" /></svg>'); /* 简单的纹理 */
+            color: #4a2c16; /* 深棕色文字 */
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px; /* 调整宽度以适应新卡片 */
+            margin: 0 auto;
+            background-color: #fff8e1; /* 卷轴底色 */
+            border: 5px solid #8b4513; /* 卷轴边框 */
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background-color: #d2b48c; /* 卷轴顶端和底端颜色 */
+            left: 0;
+            border: 1px solid #8b4513;
+        }
+
+        .container::before {
+            top: -20px;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .container::after {
+            bottom: -20px;
+            border-top: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif; /* 使用新字体 */
+            text-align: center;
+            color: #8b4513;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* ------------------ 新的任务卡片样式 ------------------ */
+        .task-card {
+            background-color: #fff8e1;
+            border: 2px solid #d2b48c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            transform: rotate(calc((var(--i, 0) - 4) * 1deg)); /* 使用变量控制倾斜 */
+        }
+        
+        .task-card:hover {
+            transform: translateY(-10px) scale(1.05) rotate(0deg) !important;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .task-card::before, .task-card::after {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 10px;
+            background-color: #d2b48c;
+            border: 1px solid #8b4513;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .task-card::before {
+            top: -5px;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .task-card::after {
+            bottom: -5px;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        /* ------------------ 任务卡片样式结束 ------------------ */
+
+        .task-title {
+            font-family: 'Cinzel', serif; /* 使用新字体 */
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #a0522d;
+            border-bottom: 2px solid #d2b48c;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .task-level {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '📜'; /* 卷轴图标 */
+            position: absolute;
+            left: 0;
+        }
+
+        .completion-conditions {
+            margin-top: 60px;
+            padding: 30px;
+            border: 2px dashed #8b4513;
+            background-color: #fff8e1;
+            text-align: center;
+        }
+        
+        .completion-conditions h3 {
+            font-family: 'Cinzel', serif; /* 使用新字体 */
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin: 0;
+        }
+        .completion-conditions ul {
+            list-style-type: '✔ '; /* 使用对勾作为列表前缀 */
+            display: inline-block;
+            text-align: left;
+        }
+        .completion-conditions p {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            h1 { font-size: 2em; }
+            .task-list { gap: 20px; }
+            .task-card { transform: rotate(0deg); }
+            .task-card:hover { transform: translateY(-5px) scale(1.05) !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏹 网络冒险家任务总览</h1>
+
+        <div class="task-list">
+            <div class="task-card" style="--i: 1">
+                <div class="task-title">🌟 任务一：探秘代理秘术</div>
+                <div class="task-level">等级：初级冒险家</div>
+                <p><strong>目标：</strong>掌握各类代理协议的奥秘</p>
+                <p><strong>挑战：</strong>分辨不同协议特点，掌握适用场景，躲避封锁魔法</p>
+                <p><strong>奖励：</strong>📖 “代理秘笈”卷轴，🛡️ “轻纱斗篷”</p>
+            </div>
+            
+            <div class="task-card" style="--i: 2">
+                <div class="task-title">🌟 任务二：掌控网络代理</div>
+                <div class="task-level">等级：中级冒险家</div>
+                <p><strong>目标：</strong>掌握正向代理与反向代理的力量</p>
+                <p><strong>挑战：</strong>使用正向代理隐藏IP，利用反向代理保护内部基地，躲避防火墙巨兽</p>
+                <p><strong>奖励：</strong>🗝️ “隐匿之钥”，⚡ “穿梭术”</p>
+            </div>
+
+            <div class="task-card" style="--i: 3">
+                <div class="task-title">🌟 任务三：征服 IPv4 大陆</div>
+                <div class="task-level">等级：初级冒险家</div>
+                <p><strong>目标：</strong>熟悉 IPv4 地址世界</p>
+                <p><strong>挑战：</strong>掌握A/B/C类地址段，查询IP归属，扫描目标IP</p>
+                <p><strong>奖励：</strong>🧭 “IPv4 指南针”，🎯 网络探索能力 +10</p>
+            </div>
+            
+            <div class="task-card" style="--i: 4">
+                <div class="task-title">🌟 任务四：探索 IPv6 星海</div>
+                <div class="task-level">等级：中级冒险家</div>
+                <p><strong>目标：</strong>掌握 IPv6 地址规则</p>
+                <p><strong>挑战：</strong>理解IPv6格式，计算前缀范围，掌握IPv6与IPv4互通</p>
+                <p><strong>奖励：</strong>🌌 “IPv6 星图”，⚡ 网络穿越技能 +15</p>
+            </div>
+            
+            <div class="task-card" style="--i: 5">
+                <div class="task-title">🌟 任务五：征服 NAT 迷宫</div>
+                <div class="task-level">等级：中级冒险家</div>
+                <p><strong>目标：</strong>理解 NAT 魔法与限制</p>
+                <p><strong>挑战：</strong>掌握NAT类型，学会端口转发，理解NAT对访问与安全的影响</p>
+                <p><strong>奖励：</strong>🗝️ “NAT 解锁卷轴”，🛡️ 隐匿防护技能 +15</p>
+            </div>
+            
+            <div class="task-card" style="--i: 6">
+                <div class="task-title">🌟 任务六：掌控 DDNS 魔法</div>
+                <div class="task-level">等级：高级冒险家</div>
+                <p><strong>目标：</strong>学会动态域名解析（DDNS）</p>
+                <p><strong>挑战：</strong>配置DDNS服务，理解域名与动态IP映射，实现远程访问</p>
+                <p><strong>奖励：</strong>🌐 “DDNS 魔法书”，🧭 网络稳定探索 +20</p>
+            </div>
+            
+            <div class="task-card" style="--i: 7">
+                <div class="task-title">🌟 任务七：公网与私网探险</div>
+                <div class="task-level">等级：中级冒险家</div>
+                <p><strong>目标：</strong>理解公网与私网边界</p>
+                <p><strong>挑战：</strong>掌握私网IP范围，了解公网IP分配，选择合适IP进行部署</p>
+                <p><strong>奖励：</strong>🏰 “网络领地图”，🎯 网络部署能力 +15</p>
+            </div>
+        </div>
+
+        <div class="completion-conditions">
+            <h3>✅ 任务完成条件</h3>
+            <ul>
+                <li>掌握代理协议与网络代理</li>
+                <li>熟悉 IPv4、IPv6、NAT、DDNS</li>
+                <li>能区分公网和私网</li>
+                <li>可独立完成每个任务（平行关系）</li>
+            </ul>
+            <p>⚔️ 成为终极网络冒险家，你将掌握网络大陆的全套法术与秘技，探索无尽领域！</p>
+        </div>
+    </div>
+</body>
+</html>
